@@ -781,3 +781,879 @@ SystemExit (exit):
 (byebug):1:in `exit'
 (byebug):1:in `create'
 app/controllers/users_controller.rb:16:in `create'
+Started GET "/users" for 127.0.0.1 at 2018-10-02 12:04:17 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 200 OK in 30ms (Views: 20.6ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-10-02 12:04:29 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 7.3ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-10-02 12:05:44 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 7.0ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/users_controller.rb:15:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-10-02 12:06:18 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17
+Completed 204 No Content in 26ms (ActiveRecord: 7.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-10-02 12:07:06 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:17
+Completed 500 Internal Server Error in 449776ms (ActiveRecord: 10.3ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:24:in `create'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kyleneale/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mGame Create (3.2ms)[0m  [1m[32mINSERT INTO "games" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-10-02 16:14:56.065464"], ["updated_at", "2018-10-02 16:14:56.065464"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mTeam Create (5.9ms)[0m  [1m[32mINSERT INTO "teams" ("game_id", "nought", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["game_id", 1], ["nought", true], ["created_at", "2018-10-02 16:14:56.090664"], ["updated_at", "2018-10-02 16:14:56.090664"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTeam Create (0.5ms)[0m  [1m[32mINSERT INTO "teams" ("game_id", "nought", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["game_id", 1], ["nought", false], ["created_at", "2018-10-02 16:14:56.101094"], ["updated_at", "2018-10-02 16:14:56.101094"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mTeam Load (1.9ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2018-10-02 14:23:04 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (7.3ms)
+Completed 200 OK in 28ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-02 14:26:28 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (12.8ms)
+Completed 200 OK in 32ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:27:02 -0400
+Started POST "/users" for 127.0.0.1 at 2018-10-02 14:27:02 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:27:02 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mTeam Load (4.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."nought" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:18
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:43 -0400
+Completed 500 Internal Server Error in 100899ms (ActiveRecord: 70.0ms)
+
+
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:43 -0400
+  
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:44 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:44 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:45 -0400
+SystemExit (exit):
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:44 -0400
+  
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:25:in `create'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:46 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:47 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:47 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:47 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:47 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:48 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:48 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:49 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:49 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:49 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:49 -0400
+Started POST "/users" for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Processing by UsersController#create as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+WebSocket error occurred: Broken pipe
+Started GET "/users" for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mTeam Load (27.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."nought" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Processing by UsersController#index as HTML
+WebSocket error occurred: Broken pipe
+  ↳ app/controllers/users_controller.rb:15
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:50 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:51 -0400
+  [1m[35m (50.7ms)[0m  [1m[35mBEGIN[0m
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:51 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (42.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  ↳ app/controllers/users_controller.rb:18
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+  ↳ app/controllers/users_controller.rb:5
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:51 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:28:51 -0400
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:51 -0400
+  [1m[35m (20.2ms)[0m  [1m[31mROLLBACK[0m
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:51 -0400
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.77ms)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:28:51 -0400
+  ↳ app/controllers/users_controller.rb:18
+Completed 200 OK in 992ms (Views: 936.8ms | ActiveRecord: 42.7ms)
+
+
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Completed 500 Internal Server Error in 3691ms (ActiveRecord: 98.5ms)
+
+
+  
+SystemExit (exit):
+GamesChannel is transmitting the subscription confirmation
+  
+GamesChannel is streaming from games_channel
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:25:in `create'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:30:17 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:30:21 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:30:21 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:42:32 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:52:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:52:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:52:25 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:52:30 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:52:30 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:59:03 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:59:08 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:59:08 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:59:30 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 14:59:44 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 14:59:44 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:10:38 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:14:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:14:08 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"GamesChannel\"}", "data"=>"\"Saying Something ;)\""}) [NoMethodError - undefined method `except' for "Saying Something ;)":String
+Did you mean?  exec]: /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:274:in `block in action_signature' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:273:in `tap' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:273:in `action_signature' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:171:in `perform_action' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/connection/subscriptions.rb:55:in `perform_action'
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"GamesChannel\"}", "data"=>"\"Saying Something ;)\""}) [NoMethodError - undefined method `except' for "Saying Something ;)":String
+Did you mean?  exec]: /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:274:in `block in action_signature' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:273:in `tap' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:273:in `action_signature' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:171:in `perform_action' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/connection/subscriptions.rb:55:in `perform_action'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:15:06 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:15:15 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:15:15 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+GamesChannel#something({"message"=>"Saying Something ;)"})
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"GamesChannel\"}", "data"=>"{\"message\":\"Saying Something ;)\",\"action\":\"something\"}"}) [SystemExit - exit]: (byebug):1:in `exit' | (byebug):1:in `something' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `safe_eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:55:in `warning_eval'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:18:53 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:18:53 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:18:53 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:18:53 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:18:53 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:18:54 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:18:53 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:03 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:04 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:04 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:04 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:04 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:08 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:09 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:09 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:46 -0400
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"GamesChannel\"}"}) [SystemExit - exit]: (byebug):1:in `exit' | (byebug):1:in `subscribed' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `safe_eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:55:in `warning_eval'
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:46 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:46 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:46 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:46 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:46 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:46 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:46 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:47 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:48 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:48 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:48 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:48 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:19:56 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:19:56 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is streaming from games_channel
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"GamesChannel\"}"}) [SystemExit - exit]: (byebug):1:in `exit' | (byebug):1:in `subscribed' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `safe_eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:55:in `warning_eval'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:21:23 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:21:23 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:21:23 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:21:23 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:21:36 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:21:36 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:21:36 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:21:36 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:21:36 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:21:40 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:21:40 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:21:41 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:21:41 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:21:41 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:21:41 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:24:50 -0400
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"TeamsChannel\"}"}) [SystemExit - exit]: (byebug):1:in `exit' | (byebug):1:in `subscribed' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `safe_eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:55:in `warning_eval'
+GamesChannel is transmitting the subscription confirmation
+WebSocket error occurred: Broken pipe
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:24:50 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:24:50 -0400
+WebSocket error occurred: Broken pipe
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:24:51 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:24:51 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:24:52 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:24:52 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:24:52 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:24:52 -0400
+GamesChannel is streaming from games_channel
+GamesChannel stopped streaming from games_channel
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+WebSocket error occurred: Broken pipe
+WebSocket error occurred: Broken pipe
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:05 -0400
+WebSocket error occurred: Broken pipe
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:25:06 -0400
+GamesChannel is streaming from games_channel
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/channels/games_channel.rb:5
+  [1m[36mGame Create (3.1ms)[0m  [1m[32mINSERT INTO "games" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-10-02 19:25:07.065560"], ["updated_at", "2018-10-02 19:25:07.065560"]]
+  ↳ app/channels/games_channel.rb:5
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/channels/games_channel.rb:5
+[ActionCable] Broadcasting to games_channel: #<Game id: 2, is_active: nil, created_at: "2018-10-02 19:25:07", updated_at: "2018-10-02 19:25:07">
+GamesChannel is transmitting the subscription confirmation
+GamesChannel transmitting {"id"=>2, "is_active"=>nil, "created_at"=>"2018-10-02T19:25:07.065Z", "updated_at"=>"2018-10-02T19:25:07.065Z"} (via streamed from games_channel)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (210.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my-app-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (173.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "backend-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (447.8ms)[0m  [1m[35mCREATE DATABASE "my-app-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (447.9ms)[0m  [1m[35mCREATE DATABASE "backend-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (31.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2921861487096323835)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGames (20181001232923)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "is_active" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181001232923_create_games.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181001232923"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTeams (20181001233528)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "teams" ("id" bigserial primary key, "game_id" integer, "nought" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181001233528_create_teams.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181001233528"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181001233657)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181001233657_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181001233657"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBlocks (20181002000441)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "blocks" ("id" bigserial primary key, "row" integer, "column" integer, "nought" boolean, "team_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_90e4f732c0"
+FOREIGN KEY ("team_id")
+  REFERENCES "teams" ("id")
+)[0m
+  ↳ db/migrate/20181002000441_create_blocks.rb:3
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_blocks_on_team_id" ON "blocks"  ("team_id")[0m
+  ↳ db/migrate/20181002000441_create_blocks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181002000441"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUserTeams (20181002193919)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "user_teams" ("id" bigserial primary key, "user_id" integer, "team_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181002193919_create_user_teams.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181002193919"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-02 19:47:23.927754"], ["updated_at", "2018-10-02 19:47:23.927754"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2921861487096323835)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:52:16 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:52:16 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is streaming from games_channel
+  [1m[36mGame Load (2.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/channels/games_channel.rb:5
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"GamesChannel\"}"}) [NoMethodError - undefined method `is_active' for nil:NilClass]: /Users/kyleneale/Development/code/Proj/FlatIron TTT/backend-ttt/app/channels/games_channel.rb:5:in `subscribed' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:179:in `block in subscribe_to_channel' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:83:in `wrap' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/engine.rb:68:in `block (3 levels) in <class:Engine>'
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 15:53:06 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:53:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+GamesChannel#something({"state"=>{"id"=>0, "team1"=>{"players"=>[], "nought"=>true}, "team2"=>{"players"=>[], "nought"=>false}, "started"=>false, "isActive"=>true, "currentPlayer"=>{"id"=>0, "username"=>"Kyle", "placed"=>false}}})
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 15:53:22 -0400
+GamesChannel stopped streaming from games_channel
+Could not execute command from ({"command"=>"message", "identifier"=>"{\"channel\":\"GamesChannel\"}", "data"=>"{\"state\":{\"id\":0,\"team1\":{\"players\":[],\"nought\":true},\"team2\":{\"players\":[],\"nought\":false},\"started\":false,\"isActive\":true,\"currentPlayer\":{\"id\":0,\"username\":\"Kyle\",\"placed\":false}},\"action\":\"something\"}"}) [SystemExit - exit]: (byebug):1:in `exit' | (byebug):1:in `something' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `safe_eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:55:in `warning_eval'
+Started POST "/users" for 127.0.0.1 at 2018-10-02 15:56:14 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+  [1m[36mTeam Load (6.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."nought" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 37.7ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'team' for User.):
+  
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-10-02 15:56:38 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+  [1m[36mTeam Load (1.8ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."nought" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'team' for User.):
+  
+app/controllers/users_controller.rb:16:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-10-02 15:57:25 -0400
+Started POST "/users" for 127.0.0.1 at 2018-10-02 15:57:36 -0400
+Started POST "/users" for 127.0.0.1 at 2018-10-02 15:57:36 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (15.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (9.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2018-10-02 19:57:37.297039"], ["updated_at", "2018-10-02 19:57:37.297039"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (10.54ms)
+Completed 200 OK in 390ms (Views: 192.4ms | ActiveRecord: 44.9ms)
+
+
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kyle", "user"=>{"name"=>"Kyle"}}
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (32.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kyle"], ["created_at", "2018-10-02 19:57:40.479995"], ["updated_at", "2018-10-02 19:57:40.479995"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (13.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kyle"], ["created_at", "2018-10-02 19:57:40.514091"], ["updated_at", "2018-10-02 19:57:40.514091"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (9.54ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (10.08ms)
+Completed 200 OK in 592ms (Views: 296.8ms | ActiveRecord: 71.1ms)
+
+
+Completed 200 OK in 550ms (Views: 160.2ms | ActiveRecord: 67.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-10-02 15:58:11 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Josue", "user"=>{"name"=>"Josue"}}
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Josue"], ["created_at", "2018-10-02 19:58:11.721879"], ["updated_at", "2018-10-02 19:58:11.721879"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (11.93ms)
+Completed 200 OK in 110ms (Views: 26.4ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-10-02 15:58:49 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Kevin", "user"=>{"name"=>"Kevin"}}
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (6.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kevin"], ["created_at", "2018-10-02 19:58:49.466665"], ["updated_at", "2018-10-02 19:58:49.466665"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (10.46ms)
+Completed 200 OK in 110ms (Views: 24.3ms | ActiveRecord: 14.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-10-02 16:01:35 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Derick", "user"=>{"name"=>"Derick"}}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (6.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Derick"], ["created_at", "2018-10-02 20:01:35.882799"], ["updated_at", "2018-10-02 20:01:35.882799"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (10.44ms)
+Completed 200 OK in 115ms (Views: 25.2ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:01:36 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:01:36 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is transmitting the subscription confirmation
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:02:21 -0400
+GamesChannel stopped streaming from games_channel
+Started POST "/users" for 127.0.0.1 at 2018-10-02 16:08:26 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Eric", "user"=>{"name"=>"Eric"}}
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Eric"], ["created_at", "2018-10-02 20:08:28.567589"], ["updated_at", "2018-10-02 20:08:28.567589"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (10.29ms)
+Completed 200 OK in 403ms (Views: 176.2ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:08:28 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:08:28 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"GamesChannel\",\"user_id\":7}"}) [SystemExit - exit]: (byebug):1:in `exit' | (byebug):1:in `subscribed' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:61:in `safe_eval' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/byebug-10.0.2/lib/byebug/helpers/eval.rb:55:in `warning_eval'
+GamesChannel is streaming from games_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:11:54 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:11:54 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:11:54 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:11:54 -0400
+GamesChannel stopped streaming from games_channel
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:11:54 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:11:54 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started POST "/users" for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+WebSocket error occurred: Broken pipe
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:05 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Processing by UsersController#create as JSON
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:06 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+  Parameters: {"name"=>"Kos", "user"=>{"name"=>"Kos"}}
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+WebSocket error occurred: Broken pipe
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+  [1m[35m (38.9ms)[0m  [1m[35mBEGIN[0m
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  ↳ app/controllers/users_controller.rb:18
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+WebSocket error occurred: Broken pipe
+  [1m[36mUser Create (48.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kos"], ["created_at", "2018-10-02 20:12:07.541804"], ["updated_at", "2018-10-02 20:12:07.541804"]]
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+  ↳ app/controllers/users_controller.rb:18
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:07 -0400
+  [1m[35m (49.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (11.52ms)
+Completed 200 OK in 938ms (Views: 217.7ms | ActiveRecord: 508.8ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:12:09 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:12:09 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is streaming from games_channel
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/channels/games_channel.rb:4
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"GamesChannel\",\"user_id\":8}"}) [NoMethodError - undefined method `broadcast_to' for #<ActionCable::Server::Base:0x007fc7ae544b60>
+Did you mean?  broadcast]: /Users/kyleneale/Development/code/Proj/FlatIron TTT/backend-ttt/app/channels/games_channel.rb:6:in `subscribed' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/channel/base.rb:179:in `block in subscribe_to_channel' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/callbacks.rb:109:in `block in run_callbacks' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/activesupport-5.2.1/lib/active_support/execution_wrapper.rb:83:in `wrap' | /Users/kyleneale/.rvm/gems/ruby-2.3.3/gems/actioncable-5.2.1/lib/action_cable/engine.rb:68:in `block (3 levels) in <class:Engine>'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:13:13 -0400
+GamesChannel stopped streaming from games_channel
+Started POST "/users" for 127.0.0.1 at 2018-10-02 16:13:19 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Tony", "user"=>{"name"=>"Tony"}}
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (4.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Tony"], ["created_at", "2018-10-02 20:13:21.484578"], ["updated_at", "2018-10-02 20:13:21.484578"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (7.37ms)
+Completed 200 OK in 413ms (Views: 205.5ms | ActiveRecord: 30.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:13:21 -0400
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:13:21 -0400
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+GamesChannel is streaming from games_channel
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/channels/games_channel.rb:4
+[ActionCable] Broadcasting to games:Z2lkOi8vYmFja2VuZC1hcGkvVXNlci85: "Sup sexy"
+GamesChannel is transmitting the subscription confirmation
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:25:39 -0400
+GamesChannel stopped streaming from games_channel
+Started POST "/users" for 127.0.0.1 at 2018-10-02 16:28:05 -0400
+Started POST "/users" for 127.0.0.1 at 2018-10-02 16:28:07 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"k", "user"=>{"name"=>"k"}}
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+  [1m[36mUser Create (6.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "k"], ["created_at", "2018-10-02 20:28:07.997564"], ["updated_at", "2018-10-02 20:28:07.997564"]]
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (5.81ms)
+Completed 200 OK in 318ms (Views: 153.2ms | ActiveRecord: 30.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-10-02 16:28:09 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"k", "user"=>{"name"=>"k"}}
+  [1m[35m (90.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:18
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-10-02 16:28:10 -0400
+  [1m[36mUser Create (15.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "k"], ["created_at", "2018-10-02 20:28:10.066472"], ["updated_at", "2018-10-02 20:28:10.066472"]]
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  ↳ app/controllers/users_controller.rb:18
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (10.85ms)
+Completed 200 OK in 564ms (Views: 188.8ms | ActiveRecord: 136.1ms)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/channels/games_channel.rb:3
+[ActionCable] Broadcasting to games_1: {:damn=>"boi"}
+GamesChannel is streaming from games_1
+GamesChannel is transmitting the subscription confirmation
+GamesChannel transmitting {"damn"=>"boi"} (via streamed from games_1)
