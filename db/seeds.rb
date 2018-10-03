@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Game.destroy_all
+Team.destroy_all
 
-game = Game.create
-
-team1 = Team.create({game: game, nought: true })
-team2 = Team.create({game: game, nought: false })
+game = Game.create 
+team1 = game.teams.create(nought: true)
+team2 = game.teams.create(nought: false)

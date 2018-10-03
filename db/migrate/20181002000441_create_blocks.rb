@@ -4,7 +4,7 @@ class CreateBlocks < ActiveRecord::Migration[5.2]
       t.integer :row
       t.integer :column
       t.boolean :nought
-      t.references :team, foreign_key: true
+      t.references :game, foreign_key: true
 
       t.timestamps
     end
